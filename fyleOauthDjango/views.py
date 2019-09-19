@@ -18,7 +18,7 @@ class HomeView(TemplateView):
     def get(self, request):
         return render(request, 'welcome.html')
 
-    def post(self,request):
+    def post(self, request):
         return redirect('profile/')
 
 
@@ -32,18 +32,16 @@ class ProfileView(TemplateView):
             return redirect('/login')
         return self.authorize(self.request)
 
-    def authorize(self,request):
+    def authorize(self, request):
         global BASE_URL
         global CLIENT_ID
-        protocol = "http://"
-        domain = request.get_host()
-        redirect_uri = "{0}{1}/profile".format(protocol, domain)
+        redirect_uri = "{0}{1}/profile".format("http://", request.get_host())
         authorize_url = "{0}/app/main/#/oauth/authorize?client_id={1}&redirect_uri={" \
                         "2}&response_type=code&state=ajsfbjak".format(
             BASE_URL, CLIENT_ID, redirect_uri)
         return HttpResponseRedirect(authorize_url)
 
-    def get_profile_details(self,request):
+    def get_profile_details(self, request):
         global CLIENT_SECRET
         global CLIENT_ID
         code = request.GET.get('code')
