@@ -17,6 +17,6 @@ class FyleConnector:
             refresh_token=self.__refresh_token
         )
 
-    def get_employee_details(self):
+    def extract_employee_details(self):
         employee_data = self.__connection.Employees.get_my_profile()
         return employee_data.get('data')
