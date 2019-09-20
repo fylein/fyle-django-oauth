@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class FyleoauthdjangoConfig(AppConfig):
+class FyleOauthDjangoConfig(AppConfig):
     name = 'fyleOauthDjango'

@@ -11,7 +11,6 @@ from .connectors import fyle
 CLIENT_ID = os.environ.get("CLIENT_ID")
 CLIENT_SECRET = os.environ.get("CLIENT_SECRET")
 BASE_URL = os.environ.get("BASE_URL")
-# TOKEN_URL = '{0}/api/oauth/token'.format(BASE_URL)
 
 
 class HomeView(TemplateView):
