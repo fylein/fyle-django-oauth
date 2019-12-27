@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+<div class="container">
+      <h1>Please login</h1>
+      <br>
+      <form action="/login" method="post">{% csrf_token %}
+        <input class="btn btn-default" type="submit" value="Login With Fyle">
+      </form>
+      {% if error %}
+        <p class="error"><strong>Unable to fetch details . Please login Again.</strong> {{ error }}</p>
+      {% endif %}
+    </div>
+</body>
+</html>
